@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.محتوا }}</title>
+</head>
+<style>
+    body {
+        font-family: "IRANSans", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+        color: #333;
+    }
+
+    header {
+        background: #4CAF50;
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    header nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+        color: #d4f7d7;
+    }
+
+    main.container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-detail h2 {
+        font-size: 28px;
+        color: #4CAF50;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .post-content {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+
+    .post-meta {
+        font-size: 14px;
+        color: #888;
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+
+    .back-link {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+
+    .back-link:hover {
+        background: #45a049;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+    }
+
+    footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        header nav a {
+            font-size: 16px;
+            margin-left: 1rem;
+        }
+
+        .post-detail h2 {
+            font-size: 24px;
+        }
+
+        .post-content {
+            font-size: 16px;
+        }
+    }
+</style>
+<body dir="rtl">
+    <header>
+        <div class="container">
+            <a style="font-weight: bolder; font-size: 25px;" href="{% url 'home' %}">وب‌سایت بلاگ</a>
+            <nav>
+                <a href="#">خانه</a>
+                <a href="#">درباره</a>
+                <a href="#">تماس</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="post-detail">
+            <h2>{{ post.عنوان }}</h2>
+            <div class="post-content">
+                <p>{{ post.محتوا }}</p>
+            <p>‌</p>
+            <p dir="rtl" class="post-meta">تاریخ: {{ date }}, زمان: {{ time }}</p>
+            </div>
+            <a href="{% url 'home' %}" class="back-link">بازگشت به لیست پست‌ها</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 وب‌سایت بلاگ. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>

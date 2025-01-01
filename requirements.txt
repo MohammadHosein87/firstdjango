@@ -1,0 +1,6 @@
+Django~=5.1.4
+django-jalali-date==1.1.3
+jdatetime==5.0.0
+pytz~=2024.1
+mysql~=0.0.3
+mysql-connector-python~=8.3.0
